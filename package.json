@@ -1,0 +1,26 @@
+{
+  "name": "web-scraping-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/King0625/web-scraping-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/King0625/web-scraping-practice/issues"
+  },
+  "homepage": "https://github.com/King0625/web-scraping-practice#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.2.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5"
+  }
+}
