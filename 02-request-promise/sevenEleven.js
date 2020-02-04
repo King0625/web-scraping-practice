@@ -72,9 +72,9 @@ function getStoresByCity(city){
       $('tbody').children().slice(1).each(function(i, el){
         results[i] = {
           城市: city,
-          店號: $(this).children().eq(0).text(),
-          店名: $(this).children().eq(1).text(),
-          地址: $(this).children().eq(2).text()
+          店號: $(this).children().eq(0).text().trim(),
+          店名: $(this).children().eq(1).text().trim(),
+          地址: $(this).children().eq(2).text().trim()
         }
       })
       return results;
