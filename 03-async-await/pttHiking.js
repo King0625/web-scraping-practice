@@ -2,22 +2,23 @@ const rp = require("request-promise");
 const cheerio = require('cheerio');
 const moment = require('moment');
 
-main();
+getTheNewestPage()
+.then(newestPage => {
+  console.log(newestPage);
+  main(newestPage)
+  .then(result => {
+    console.log(result);
+  })
+});
+// console.log(newestPage);
 
-async function main(){
-  const newestPage = await getTheNewestPage();
-  const results = [];
-  // console.log(newestPage);
-  // const start = true;
-  // while(start){
-  // }
-  const result = await getPostsByPage(newestPage);
-  const start = true;
-  const posts = result.posts;
-  // posts.forEach(el => {
-  //   if(el.date)
-  // })
-  console.log(result);
+async function main(page = ''){
+  const result = await getPostsByPage(page);
+  if(result.previous_page_num === 1019){
+    return result.posts;
+  }else{
+    return result.posts.concat(await main(result.previous_page_num));
+  }
 }
 
 async function getTheNewestPage(){
